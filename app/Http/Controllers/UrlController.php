@@ -22,7 +22,6 @@ class UrlController extends Controller
     {
         $url = $request->input('originalUrl');
 
-        // Perform Google Safe Browsing check
         $result = $this->googleSafeBrowsingService->checkUrl($url);
         return response()->json($result);
     }
